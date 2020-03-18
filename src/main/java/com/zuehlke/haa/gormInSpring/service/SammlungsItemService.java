@@ -1,10 +1,15 @@
 package com.zuehlke.haa.gormInSpring.service;
 
+import com.zuehlke.haa.gormInSpring.repo.SammlungsItem;
 import com.zuehlke.haa.gormInSpring.repo.SammlungsItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
+@Transactional
 public class SammlungsItemService {
   private SammlungsItemRepository sammlungsItemRepository;
 
@@ -13,7 +18,11 @@ public class SammlungsItemService {
     this.sammlungsItemRepository = sammlungsItemRepository;
   }
 
-  public String test() {
-    return "Hi Service: " + sammlungsItemRepository.test();
+  public void save(SammlungsItem sammlungsItem) {
+    sammlungsItemRepository.save(sammlungsItem);
+  }
+
+  public List<SammlungsItem> findAll() {
+    return sammlungsItemRepository.findAll();
   }
 }
