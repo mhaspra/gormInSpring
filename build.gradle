@@ -1,0 +1,31 @@
+plugins {
+    id 'groovy'
+    id 'java'
+
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+group 'com.zuehlke.haa.gormInSpring'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+
+sourceSets {
+    main {
+        java { srcDirs = [] }// no source dirs for the java compiler
+        groovy { srcDirs = ["src/main/java", "src/main/groovy"] }//compile everything in src/ with groovyc
+    }
+}
