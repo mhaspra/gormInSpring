@@ -39,4 +39,11 @@ public class SammlungsItemController {
 
     return SammlungsItemDto.create(sammlungsItem);
   }
+
+  @PutMapping("{id}")
+  public SammlungsItemDto update(@PathVariable Long id, @RequestBody SammlungsItemDto sammlungsItemDto){
+    SammlungsItem sammlungsItem = sammlungsItemService.update(id, sammlungsItemDto);
+
+    return SammlungsItemDto.create(sammlungsItem);
+  }
 }

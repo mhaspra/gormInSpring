@@ -37,4 +37,11 @@ public class SammlungsItemService {
   public SammlungsItem get(Long id){
     return sammlungsItemRepository.get(id);
   }
+
+  public SammlungsItem update(Long id, SammlungsItemDto sammlungsItemDto) {
+    SammlungsItem sammlungsItem = sammlungsItemRepository.get(id);
+    sammlungsItem.setConfig(sammlungsItemDto.getConfig());
+
+    return sammlungsItemRepository.save(sammlungsItem);
+  }
 }
