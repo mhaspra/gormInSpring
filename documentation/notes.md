@@ -1,4 +1,10 @@
 # Notes for grails2spring
+## Versionen
+gorm: 7.0.1.RELEASE //Minimum Version für Java 11 (GP: 5.0.4)
+hibernate: 5.4.12.Final (GP: 4.3.11.Final)
+spring-boot: 2.2.5.RELEASE (GP: 1.3.3.RELEASE)
+spring-core: 5.2.4.RELEASE (GP: 4.2.5.RELEASE)
+
 ##Spring with gorm
 ###Usefull Links
 https://guides.grails.org/gorm-without-grails/guide/index.html
@@ -31,3 +37,6 @@ Am Anfang hat es nicht so richtig funktionert, es kamen Fehler mit dem DirtyChec
 Nach einem erneute Set-Up hat es dann aber funktioniert. Leider ist der Guide grails only solche nur mit Java gibt es nicht.
 
 Bisher sieht es aber gut aus. (Offen ist noch die Konfiguration, aus irgendeinem Grund hat es nur im yml funktioniert. Das sollte aber lösbar sein)
+
+####19.03.2020
+
