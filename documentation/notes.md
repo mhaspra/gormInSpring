@@ -49,8 +49,6 @@ sourceSets {
 }
 ```
 
-
-
 ####P2 EntityManagerHolder ClassCastException
 Nach dem Hinzufügen der ersten Rest-Methode trat folgender Fehler auf:
 ```java
@@ -62,3 +60,16 @@ Lösung: `HibernateJpaAutoConfiguration.class` muss excluded werden
 public class GormInSpringApplication {...}
 ````
 Quelle: https://stackoverflow.com/questions/42476261/classcastexception-org-springframework-orm-jpa-entitymanagerholder-cannot-be-ca
+
+####P3 Problem mit implements GormEntity<Entity>
+Fügt man einer Klasse ``implements GormEntity<Entity>`` hinzu, wie zum Beispiel für:
+````groovy
+@Entity
+class CollectionItem implements GormEntity<CollectionItem>{//Use of 'implements GormEntity<CollectionItem>' leads to errors. Do we need that?
+    @Id
+    Long id
+    String config
+}
+````
+Dann bekommt man komische Compile Errors wenn diese Klasse kompiliert wird.
+Lösung: Noch offen, es scheint aber dass man das gar nicht braucht. Gemäss http://gorm.grails.org/7.0.x/developer/manual/index.html scheint es so dass der GORM Compiler das sowieso per default hinzufügt.

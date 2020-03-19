@@ -1,12 +1,11 @@
 package com.zuehlke.haa.gormInSpring.repo
 
 import grails.gorm.annotation.Entity
-import groovy.transform.ToString
 
 import javax.persistence.Id
 
 @Entity
-class CollectionItem {//Use of GormEntity is merely to aid IDE support outside of Grails.
+class CollectionItem {//Use of 'implements GormEntity<CollectionItem>' leads to errors. Do we need that?
     @Id
     Long id
     String config
