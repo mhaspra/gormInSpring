@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
+
 @RestController
 @RequestMapping("sammlungsItems")
 public class SammlungsItemController {
@@ -23,5 +28,11 @@ public class SammlungsItemController {
   public SammlungsItemDto get(@PathVariable Long id){
     SammlungsItem sammlungsItem = sammlungsItemService.get(id);
     return SammlungsItemDto.create(sammlungsItem);
+  }
+
+  @GetMapping
+  public List<SammlungsItemDto> getAll(){
+    List<SammlungsItem> sammlungsItems = sammlungsItemService.findAll();
+    return sammlungsItems.stream().map(SammlungsItemDto::create).collect(toList());
   }
 }
