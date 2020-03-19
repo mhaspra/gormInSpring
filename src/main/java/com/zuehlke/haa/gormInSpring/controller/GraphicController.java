@@ -1,8 +1,7 @@
 package com.zuehlke.haa.gormInSpring.controller;
 
 
-import com.zuehlke.haa.gormInSpring.repo.CollectionItem;
-import com.zuehlke.haa.gormInSpring.repo.Graphic;
+import com.zuehlke.haa.gormInSpring.domain.Graphic;
 import com.zuehlke.haa.gormInSpring.service.GraphicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

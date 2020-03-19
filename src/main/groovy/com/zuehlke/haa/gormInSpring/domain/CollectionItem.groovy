@@ -1,4 +1,4 @@
-package com.zuehlke.haa.gormInSpring.repo
+package com.zuehlke.haa.gormInSpring.domain
 
 import grails.gorm.annotation.Entity
 import groovy.transform.ToString
@@ -10,4 +10,8 @@ abstract class CollectionItem {//Use of 'implements GormEntity<CollectionItem>' 
     @Id
     Long id
     String author
+
+    static belongsTo = Collection
+    static hasMany = [collections      : Collection]
+
 }

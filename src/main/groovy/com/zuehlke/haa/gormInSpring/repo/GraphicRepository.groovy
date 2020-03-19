@@ -1,5 +1,6 @@
 package com.zuehlke.haa.gormInSpring.repo
 
+import com.zuehlke.haa.gormInSpring.domain.Graphic
 import org.springframework.stereotype.Service
 
 @Service
@@ -13,6 +14,6 @@ class GraphicRepository {
     }
 
     Graphic get(Long id){
-        Graphic.get(id)
+        return Graphic.get(id)
     }
 }

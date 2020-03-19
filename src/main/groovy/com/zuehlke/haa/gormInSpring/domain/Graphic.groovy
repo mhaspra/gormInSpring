@@ -1,4 +1,4 @@
-package com.zuehlke.haa.gormInSpring.repo
+package com.zuehlke.haa.gormInSpring.domain
 
 import grails.gorm.annotation.Entity
 

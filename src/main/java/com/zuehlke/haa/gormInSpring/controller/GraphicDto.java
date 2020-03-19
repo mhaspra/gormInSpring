@@ -1,7 +1,6 @@
 package com.zuehlke.haa.gormInSpring.controller;
 
-import com.zuehlke.haa.gormInSpring.repo.CollectionItem;
-import com.zuehlke.haa.gormInSpring.repo.Graphic;
+import com.zuehlke.haa.gormInSpring.domain.Graphic;
 
 public class GraphicDto {
   private Long id;

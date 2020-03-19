@@ -1,20 +1,24 @@
 package com.zuehlke.haa.gormInSpring;
 
-import com.zuehlke.haa.gormInSpring.repo.CollectionItem;
-import com.zuehlke.haa.gormInSpring.repo.Graphic;
+import com.zuehlke.haa.gormInSpring.domain.Collection;
+import com.zuehlke.haa.gormInSpring.domain.Graphic;
+import com.zuehlke.haa.gormInSpring.service.CollectionService;
 import com.zuehlke.haa.gormInSpring.service.GraphicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class BootStrap {
   private GraphicService graphicService;
+  private CollectionService collectionService;
 
   @Autowired
-  public BootStrap(GraphicService graphicService) {
+  public BootStrap(GraphicService graphicService, CollectionService collectionService) {
     this.graphicService = graphicService;
+    this.collectionService = collectionService;
   }
 
   public void init(){
@@ -27,6 +31,14 @@ public class BootStrap {
         .map(item -> item.getId() + ": " + item.getConfig())
         .collect(Collectors.joining(", "))
     );
+
+    insertExampleCollection();
+
+    System.out.println("Inserted: " + collectionService.findAll()
+        .stream()
+        .map(item -> item.getId() + ": " + item.getTitle())
+        .collect(Collectors.joining(", "))
+    );
   }
 
   private void insertExampleGraphics(String author, String config) {
@@ -35,5 +47,14 @@ public class BootStrap {
     graphic.setConfig(config);
 
     graphicService.save(graphic);
+  }
+
+  private void insertExampleCollection() {
+    Collection collection = new Collection();
+    collection.setTitle("Example Collection");
+    List<Graphic> graphics = graphicService.findAll();
+    collection.addGraphics(graphics);
+
+    collectionService.save(collection);
   }
 }
