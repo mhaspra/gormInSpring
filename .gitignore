@@ -12,3 +12,4 @@ build/
 *.ipr
 out/
 /devDb.mv.db
+/existing/

@@ -73,3 +73,7 @@ class CollectionItem implements GormEntity<CollectionItem>{//Use of 'implements 
 ````
 Dann bekommt man komische Compile Errors wenn diese Klasse kompiliert wird.
 Lösung: Noch offen, es scheint aber dass man das gar nicht braucht. Gemäss http://gorm.grails.org/7.0.x/developer/manual/index.html scheint es so dass der GORM Compiler das sowieso per default hinzufügt.
+
+####P4 Wenn man die Gorm @ToString Methode brauch session
+Wenn die @ToString methode in einem Controller aufgerufen wird, dann kann es zu einer Exception kommen weil man keine Hibernate session hat.
+Offen: War das vorher schon so?

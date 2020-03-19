@@ -1,10 +1,12 @@
 package com.zuehlke.haa.gormInSpring.domain
 
 import grails.gorm.annotation.Entity
+import groovy.transform.ToString
 
 import javax.persistence.Id
 
 @Entity
+@ToString(includeNames = true, excludes = 'items')
 class Collection {
     @Id
     Long id

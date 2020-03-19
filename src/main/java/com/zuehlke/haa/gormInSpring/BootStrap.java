@@ -25,20 +25,10 @@ public class BootStrap {
     insertExampleGraphics("Albert", "Config A");
     insertExampleGraphics("Betty", "Config B");
     insertExampleGraphics("Charles", "Config C");
-
-    System.out.println("Inserted: " + graphicService.findAll()
-        .stream()
-        .map(item -> item.getId() + ": " + item.getConfig())
-        .collect(Collectors.joining(", "))
-    );
+    System.out.println("Inserted: " + graphicService.findAllAsString());
 
     insertExampleCollection();
-
-    System.out.println("Inserted: " + collectionService.findAll()
-        .stream()
-        .map(item -> item.getId() + ": " + item.getTitle())
-        .collect(Collectors.joining(", "))
-    );
+    System.out.println("Inserted: " + collectionService.findAllAsString());
   }
 
   private void insertExampleGraphics(String author, String config) {

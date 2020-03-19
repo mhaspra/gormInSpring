@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -37,5 +38,13 @@ public class CollectionService {
 
   public List<Collection> findAll() {
     return collectionRepository.findAll();
+  }
+
+  //To test ToString in a method with a transaction
+  public String findAllAsString() {
+    return findAll()
+        .stream()
+        .map(Object::toString)
+        .collect(Collectors.joining(", "));
   }
 }
