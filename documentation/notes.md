@@ -32,7 +32,7 @@ We are using GORM outside of Grails. Because of that, we need to annotate our do
 
 ###Probleme
 
-####Groovy Code in Java Klassen nicht verfügbar
+####P1 Groovy Code in Java Klassen nicht verfügbar
 Wenn ich das Projekt builde, dann bekomme für groovy Klassen die in Java benutzt werden:
 ````java
 Error:(3, 44) java: package com.zuehlke.haa.grails2spring.domain does not exist
@@ -49,17 +49,16 @@ sourceSets {
 }
 ```
 
-###Log
-####18.03.2020
-Am Anfang hat es nicht so richtig funktionert, es kamen Fehler mit dem DirtyChecker von Gorm und mit einer doppelten importieren Library.
-Nach einem erneute Set-Up hat es dann aber funktioniert. Leider war der Guide grails only, solche nur mit Java gibt es nicht.
 
-Bisher sieht es aber gut aus. (Offen ist noch die Konfiguration, aus irgendeinem Grund hat es nur im yml funktioniert. Das sollte aber lösbar sein)
 
-####19.03.2020
-Um Java 11 dann wirklich zu enablen braucht man midestens gorm 7, das hat zur Folge dass man mindestens hibernate 5.3 und mindestens spring 5.2 braucht
-
-##Backlog
-* Changes to Proxy Handling anschauen
-* Eh Cache anschauen (ist das der richtige?)
-* Spock Tests ausprobieren
+####P2 EntityManagerHolder ClassCastException
+Nach dem Hinzufügen der ersten Rest-Methode trat folgender Fehler auf:
+```java
+org.springframework.orm.jpa.EntityManagerHolder cannot be cast to org.springframework.orm.hibernate5.SessionHolder
+```
+Lösung: `HibernateJpaAutoConfiguration.class` muss excluded werden
+```java
+@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
+public class GormInSpringApplication {...}
+````
+Quelle: https://stackoverflow.com/questions/42476261/classcastexception-org-springframework-orm-jpa-entitymanagerholder-cannot-be-ca

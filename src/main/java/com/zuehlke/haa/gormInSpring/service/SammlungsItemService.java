@@ -25,4 +25,8 @@ public class SammlungsItemService {
   public List<SammlungsItem> findAll() {
     return sammlungsItemRepository.findAll();
   }
+
+  public SammlungsItem get(Long id){
+    return sammlungsItemRepository.get(id);
+  }
 }

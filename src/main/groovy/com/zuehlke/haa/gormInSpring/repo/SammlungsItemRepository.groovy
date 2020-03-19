@@ -11,4 +11,8 @@ class SammlungsItemRepository {
     List<SammlungsItem> findAll() {
         return SammlungsItem.findAll()
     }
+
+    SammlungsItem get(Long id){
+        SammlungsItem.get(id)
+    }
 }
