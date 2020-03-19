@@ -1,0 +1,7 @@
+### POST Request to store a new element
+POST http://localhost:8080/sammlungsItems
+Content-Type: application/json
+
+{"config": "a config from rest"}
+
+###

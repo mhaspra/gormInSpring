@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service
 
 @Service
 class SammlungsItemRepository {
-    void save(SammlungsItem sammlungsItem){
-        SammlungsItem.saveAll([sammlungsItem])
+    SammlungsItem save(SammlungsItem sammlungsItem){
+        return sammlungsItem.save()
     }
 
     List<SammlungsItem> findAll() {

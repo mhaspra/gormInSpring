@@ -1,5 +1,6 @@
 package com.zuehlke.haa.gormInSpring.service;
 
+import com.zuehlke.haa.gormInSpring.controller.SammlungsItemDto;
 import com.zuehlke.haa.gormInSpring.repo.SammlungsItem;
 import com.zuehlke.haa.gormInSpring.repo.SammlungsItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,13 @@ public class SammlungsItemService {
 
   public void save(SammlungsItem sammlungsItem) {
     sammlungsItemRepository.save(sammlungsItem);
+  }
+
+  public SammlungsItem save(SammlungsItemDto sammlungsItemDto) {
+    SammlungsItem sammlungsItem = new SammlungsItem();
+    sammlungsItem.setConfig(sammlungsItemDto.getConfig());
+
+    return sammlungsItemRepository.save(sammlungsItem);
   }
 
   public List<SammlungsItem> findAll() {

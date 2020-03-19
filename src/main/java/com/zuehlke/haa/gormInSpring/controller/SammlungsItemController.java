@@ -4,10 +4,7 @@ package com.zuehlke.haa.gormInSpring.controller;
 import com.zuehlke.haa.gormInSpring.repo.SammlungsItem;
 import com.zuehlke.haa.gormInSpring.service.SammlungsItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,5 +31,12 @@ public class SammlungsItemController {
   public List<SammlungsItemDto> getAll(){
     List<SammlungsItem> sammlungsItems = sammlungsItemService.findAll();
     return sammlungsItems.stream().map(SammlungsItemDto::create).collect(toList());
+  }
+
+  @PostMapping
+  public SammlungsItemDto add(@RequestBody SammlungsItemDto sammlungsItemDto){
+    SammlungsItem sammlungsItem = sammlungsItemService.save(sammlungsItemDto);
+
+    return SammlungsItemDto.create(sammlungsItem);
   }
 }
