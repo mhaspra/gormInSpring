@@ -6,7 +6,7 @@ import groovy.transform.ToString
 import javax.persistence.Id
 
 @Entity
-class SammlungsItem {
+class SammlungsItem {//Use of GormEntity is merely to aid IDE support outside of Grails.
     @Id
     Long id
     String config
