@@ -1,5 +1,5 @@
 ### PUT Request to store a new element
-PUT http://localhost:8080/sammlungsItems/36
+PUT http://localhost:8080/collectionItems/4
 Content-Type: application/json
 
 {"config": "a new config from rest"}

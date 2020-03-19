@@ -1,7 +1,7 @@
 package com.zuehlke.haa.gormInSpring;
 
-import com.zuehlke.haa.gormInSpring.repo.SammlungsItem;
-import com.zuehlke.haa.gormInSpring.service.SammlungsItemService;
+import com.zuehlke.haa.gormInSpring.repo.CollectionItem;
+import com.zuehlke.haa.gormInSpring.service.CollectionItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,29 +9,29 @@ import java.util.stream.Collectors;
 
 @Service
 public class BootStrap {
-  private SammlungsItemService sammlungsItemService;
+  private CollectionItemService collectionItemService;
 
   @Autowired
-  public BootStrap(SammlungsItemService sammlungsItemService) {
-    this.sammlungsItemService = sammlungsItemService;
+  public BootStrap(CollectionItemService collectionItemService) {
+    this.collectionItemService = collectionItemService;
   }
 
   public void init(){
-    insertSammlungsItem("Config A");
-    insertSammlungsItem("Config B");
-    insertSammlungsItem("Config C");
+    insertCollectionItem("Config A");
+    insertCollectionItem("Config B");
+    insertCollectionItem("Config C");
 
-    System.out.println(sammlungsItemService.findAll()
+    System.out.println(collectionItemService.findAll()
         .stream()
         .map(item -> item.getId() + ": " + item.getConfig())
         .collect(Collectors.joining(", "))
     );
   }
 
-  private void insertSammlungsItem(String config) {
-    SammlungsItem sammlungsItem = new SammlungsItem();
-    sammlungsItem.setConfig(config);
+  private void insertCollectionItem(String config) {
+    CollectionItem collectionItem = new CollectionItem();
+    collectionItem.setConfig(config);
 
-    sammlungsItemService.save(sammlungsItem);
+    collectionItemService.save(collectionItem);
   }
 }
