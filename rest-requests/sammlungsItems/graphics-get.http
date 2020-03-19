@@ -1,9 +1,9 @@
 ### GET request to get all elements
-GET http://localhost:8080/collectionItems
+GET http://localhost:8080/graphics
 Accept: application/json
 
 ### GET request to get all a specific element by id (http://localhost:8080/collectionItems/<id>)
-GET http://localhost:8080/collectionItems/4
+GET http://localhost:8080/graphics/4
 Accept: application/json
 
 ###

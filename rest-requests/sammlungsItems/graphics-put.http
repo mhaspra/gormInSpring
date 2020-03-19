@@ -1,0 +1,10 @@
+### PUT Request to store a new element
+PUT http://localhost:8080/graphics/4
+Content-Type: application/json
+
+{
+  "author": "Restius Maximus",
+  "config": "a new config from rest"
+}
+
+###

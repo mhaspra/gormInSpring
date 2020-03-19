@@ -1,0 +1,10 @@
+### POST Request to store a new element
+POST http://localhost:8080/graphics
+Content-Type: application/json
+
+{
+  "author": "Restius Maximus",
+  "config": "a config from rest"
+}
+
+###
