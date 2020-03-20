@@ -6,10 +6,12 @@ import groovy.transform.ToString
 import javax.persistence.Id
 
 @Entity
-abstract class CollectionItem {//Use of 'implements GormEntity<CollectionItem>' leads to errors. Do we need that?
+abstract class CollectionItem {
     @Id
     Long id
     String author
+
+    Set<Collection> collections = []
 
     static belongsTo = Collection
     static hasMany = [collections      : Collection]
