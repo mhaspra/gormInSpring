@@ -8,9 +8,10 @@ import javax.persistence.Id
 @Entity
 @ToString(includeNames = true, excludes = 'items')
 class Collection {
-    @Id
     Long id
+
     String title
+
     List<CollectionItem> items = []
 
     static hasMany = [items: CollectionItem]

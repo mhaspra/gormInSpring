@@ -7,8 +7,8 @@ import javax.persistence.Id
 
 @Entity
 abstract class CollectionItem {
-    @Id
     Long id
+
     String author
 
     Set<Collection> collections = []

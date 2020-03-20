@@ -5,6 +5,7 @@ import grails.gorm.annotation.Entity
 @Entity
 class Description {
     Long id
+
     String text
 
     Graphic graphic;
