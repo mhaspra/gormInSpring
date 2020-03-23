@@ -1,6 +1,7 @@
 # Notes for grails2spring
 ## Versionen
-* Java openjdk 11.0.2
+* Java: openjdk 11.0.2
+* Groovy: 2.5
 * gorm: 7.0.1.RELEASE //Minimum Version für Java 11 (GP: 5.0.4)
 * hibernate: 5.4.12.Final (GP: 4.3.11.Final)
 * spring-boot: 2.2.5.RELEASE (GP: 1.3.3.RELEASE)
