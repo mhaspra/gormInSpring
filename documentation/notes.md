@@ -80,3 +80,7 @@ Lösung: Noch offen, es scheint aber dass man das gar nicht braucht. Gemäss htt
 ####P4 Wenn man die Gorm @ToString Methode brauch session
 Wenn die @ToString methode in einem Controller aufgerufen wird, dann kann es zu einer Exception kommen weil man keine Hibernate session hat.
 Offen: War das vorher schon so?
+
+###Unterschiede
+####Version feld in gorm Entitäten ist nicht mehr nötig
+War es vorher nötig? Schadet es?
