@@ -1,5 +1,6 @@
 # Notes for grails2spring
 ## Versionen
+* Java openjdk 11.0.2
 * gorm: 7.0.1.RELEASE //Minimum Version für Java 11 (GP: 5.0.4)
 * hibernate: 5.4.12.Final (GP: 4.3.11.Final)
 * spring-boot: 2.2.5.RELEASE (GP: 1.3.3.RELEASE)
@@ -17,6 +18,8 @@ You may need to alter instanceof checks are manually unwrap proxies in certain c
 In GORM 6.x the grails-validation module was deprecated and replaced by grails-datastore-gorm-validation.
    
 Deprecated interfaces were maintained for backwards compatibility. In GORM 7.0 these deprecated classes have been removed and all dependency on grails-validation removed.
+
+Impact on custom @Valid... Annotations?
 
 ###Transactions Now Required for all Operations
 Previous versions of Hibernate allowed read operations to be executed without the presence of a declaration transaction.
