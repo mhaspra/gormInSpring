@@ -13,3 +13,6 @@ build/
 out/
 /devDb.*
 /existing/
+/dependencies
+/documentation/log.md
+/documentation/knowledge.md
