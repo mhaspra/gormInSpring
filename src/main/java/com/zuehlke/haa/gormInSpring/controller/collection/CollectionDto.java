@@ -1,8 +1,8 @@
-package com.zuehlke.haa.gormInSpring.controller;
+package com.zuehlke.haa.gormInSpring.controller.collection;
 
+import com.zuehlke.haa.gormInSpring.controller.graphic.GraphicDto;
 import com.zuehlke.haa.gormInSpring.domain.Collection;
 import com.zuehlke.haa.gormInSpring.domain.Graphic;
-import org.hibernate.internal.CoreMessageLogger_$logger;
 
 import java.util.List;
 import java.util.stream.Collectors;

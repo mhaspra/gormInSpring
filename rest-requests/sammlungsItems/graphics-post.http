@@ -4,7 +4,8 @@ Content-Type: application/json
 
 {
   "author": "Restius Maximus",
-  "config": "a config from rest"
+  "config": "a config from rest",
+  "keywords": ["keyword 1", "keyword 2"]
 }
 
 ###

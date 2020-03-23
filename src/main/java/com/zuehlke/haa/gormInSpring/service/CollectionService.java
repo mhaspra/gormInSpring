@@ -1,13 +1,12 @@
 package com.zuehlke.haa.gormInSpring.service;
 
-import com.zuehlke.haa.gormInSpring.controller.CollectionDto;
+import com.zuehlke.haa.gormInSpring.controller.collection.CollectionDto;
 import com.zuehlke.haa.gormInSpring.domain.Collection;
 import com.zuehlke.haa.gormInSpring.repo.CollectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

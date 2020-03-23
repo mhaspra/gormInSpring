@@ -1,4 +1,4 @@
-package com.zuehlke.haa.gormInSpring.controller;
+package com.zuehlke.haa.gormInSpring.controller.graphic;
 
 
 import com.zuehlke.haa.gormInSpring.domain.Graphic;
@@ -22,14 +22,12 @@ public class GraphicController {
 
   @GetMapping("{id}")
   public GraphicDto get(@PathVariable Long id){
-    Graphic gra = graphicService.get(id);
-    return GraphicDto.create(gra);
+    return graphicService.getAsDto(id);
   }
 
   @GetMapping
   public List<GraphicDto> getAll(){
-    List<Graphic> graphics = graphicService.findAll();
-    return graphics.stream().map(GraphicDto::create).collect(toList());
+    return graphicService.findAllAsDto();
   }
 
   @PostMapping

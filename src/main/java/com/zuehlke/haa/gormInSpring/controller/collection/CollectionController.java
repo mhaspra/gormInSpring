@@ -1,6 +1,5 @@
-package com.zuehlke.haa.gormInSpring.controller;
+package com.zuehlke.haa.gormInSpring.controller.collection;
 
-import com.zuehlke.haa.gormInSpring.domain.Collection;
 import com.zuehlke.haa.gormInSpring.service.CollectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

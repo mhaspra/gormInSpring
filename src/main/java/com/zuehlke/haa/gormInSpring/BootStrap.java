@@ -4,14 +4,18 @@ import com.zuehlke.haa.gormInSpring.domain.Collection;
 import com.zuehlke.haa.gormInSpring.domain.Graphic;
 import com.zuehlke.haa.gormInSpring.service.CollectionService;
 import com.zuehlke.haa.gormInSpring.service.GraphicService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.invoke.MethodHandles;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class BootStrap {
+  private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
   private GraphicService graphicService;
   private CollectionService collectionService;
 
@@ -25,10 +29,10 @@ public class BootStrap {
     insertExampleGraphics("Albert", "Config A");
     insertExampleGraphics("Betty", "Config B");
     insertExampleGraphics("Charles", "Config C");
-    System.out.println("Inserted: " + graphicService.findAllAsString());
+    log.info("Inserted: " + graphicService.findAllAsString());
 
     insertExampleCollection();
-    System.out.println("Inserted: " + collectionService.findAllAsString());
+    log.info("Inserted: " + collectionService.findAllAsString());
   }
 
   private void insertExampleGraphics(String author, String config) {
