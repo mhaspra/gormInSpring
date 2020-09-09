@@ -1,15 +1,12 @@
 plugins {
     id 'groovy'
     id 'java'
-
-    id 'org.springframework.boot' version '2.2.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 }
 
 group 'com.zuehlke.haa.gormInSpring'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11.0
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -20,19 +17,18 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
     implementation 'org.codehaus.groovy:groovy'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
 
-    implementation("org.grails:gorm-hibernate5-spring-boot:7.0.1.RELEASE")
-    implementation "org.hibernate:hibernate-core"
-    implementation "org.hibernate:hibernate-ehcache"
+    implementation("org.grails:gorm-hibernate4-spring-boot:5.0.3.RELEASE")
+    implementation "org.hibernate:hibernate-ehcache:4.3.11.Final"
 
 
     runtime "org.apache.tomcat:tomcat-jdbc:8.5.0"
     runtime "org.apache.tomcat.embed:tomcat-embed-logging-log4j:8.5.0"
 
-    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'com.h2database:h2:1.4.200'
 
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.3.3.RELEASE'
     testCompile 'org.spockframework:spock-spring:2.0-M2-groovy-2.5'
 }
 

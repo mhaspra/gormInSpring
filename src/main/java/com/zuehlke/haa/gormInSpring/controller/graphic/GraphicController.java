@@ -20,24 +20,24 @@ public class GraphicController {
     this.graphicService = graphicService;
   }
 
-  @GetMapping("{id}")
+  @RequestMapping(path = "{id}")
   public GraphicDto get(@PathVariable Long id){
     return graphicService.getAsDto(id);
   }
 
-  @GetMapping
+  @RequestMapping
   public List<GraphicDto> getAll(){
     return graphicService.findAllAsDto();
   }
 
-  @PostMapping
+  @RequestMapping(method = RequestMethod.POST)
   public GraphicDto add(@RequestBody GraphicDto graphicDto){
     Graphic graphic = graphicService.save(graphicDto);
 
     return GraphicDto.create(graphic);
   }
 
-  @PutMapping("{id}")
+  @RequestMapping(path = "{id}", method = RequestMethod.PUT)
   public GraphicDto update(@PathVariable Long id, @RequestBody GraphicDto graphicDto){
     Graphic graphic = graphicService.update(id, graphicDto);
 

@@ -1,8 +1,10 @@
 package com.zuehlke.haa.gormInSpring.service
 
+import com.zuehlke.haa.gormInSpring.GormInSpringApplication
 import com.zuehlke.haa.gormInSpring.domain.Graphic
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.SpringApplicationConfiguration
+import org.springframework.boot.test.WebIntegrationTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
 import spock.lang.Specification
@@ -10,7 +12,8 @@ import spock.lang.Specification
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 
-@SpringBootTest
+@WebIntegrationTest
+@SpringApplicationConfiguration(GormInSpringApplication.class)
 @Transactional
 @ActiveProfiles('test')
 class GraphicServiceISpec extends Specification{
