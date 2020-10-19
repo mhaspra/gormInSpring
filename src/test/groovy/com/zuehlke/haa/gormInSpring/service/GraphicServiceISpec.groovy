@@ -12,9 +12,9 @@ import spock.lang.Specification
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 
-@WebIntegrationTest
+
 @SpringApplicationConfiguration(GormInSpringApplication.class)
-@Transactional
+@WebIntegrationTest
 @ActiveProfiles('test')
 class GraphicServiceISpec extends Specification{
     @Autowired
